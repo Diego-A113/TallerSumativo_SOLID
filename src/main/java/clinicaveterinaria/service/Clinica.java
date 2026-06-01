@@ -2,16 +2,17 @@ package clinicaveterinaria.service;
 
 import java.time.LocalDate;
 
+import clinicaveterinaria.interfaces.IDirectoBase;
+import clinicaveterinaria.interfaces.IVeterinarioService;
 import clinicaveterinaria.model.Cita;
 import clinicaveterinaria.model.Mascota;
 import clinicaveterinaria.model.Veterinario;
-import clinicaveterinaria.repository.DirectoBaseDatos;
 
 public class Clinica {
-    private final DirectoVeterinario veterinarioService;
-    private final DirectoBaseDatos baseDatos;
+    private final IVeterinarioService veterinarioService;
+    private final IDirectoBase baseDatos;
 
-    public Clinica(DirectoVeterinario veterinarioService, DirectoBaseDatos baseDatos) {
+    public Clinica(IVeterinarioService veterinarioService, IDirectoBase baseDatos) {
         this.veterinarioService = veterinarioService;
         this.baseDatos = baseDatos;
     }
