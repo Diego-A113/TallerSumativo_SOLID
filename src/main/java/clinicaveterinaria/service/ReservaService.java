@@ -17,8 +17,8 @@ public class ReservaService {
 
     public Cita reservarCita(int id, Mascota mascota, Veterinario veterinario, LocalDate fecha) {
         Cita cita = new Cita(id, mascota, veterinario, fecha, "Pendiente", EstadoCita.PROGRAMADA); 
-        disponible = false;
-        veterinario.setDisponible(disponible);
+        
+        veterinario.setDisponible(false);
         baseDatos.getCitas().add(cita);
         return cita;
     }
