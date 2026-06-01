@@ -11,11 +11,11 @@ public class FisioterapiaTratamiento implements ITratamiento{
 
     @Override
     public double calcularCostoFinal() {
-            return costo * 1.10;
+            return costo * 0.95;
     }
 
     @Override
     public String obtenerIndicaciones() {
-            return "Administrar segun receta.";
+            return "Repetir sesiones dos veces por semana.";
     }
 }
