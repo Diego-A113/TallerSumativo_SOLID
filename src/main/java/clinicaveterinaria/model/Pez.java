@@ -1,18 +1,15 @@
 package clinicaveterinaria.model;
 
 
-public class Pez extends Animal {
+public class Pez extends Animal implements IAnimalNadar {
     public Pez(int id, String nombre) {
         super(id, nombre, TipoAnimal.PEZ);
     }
 
     @Override
-    public void caminar() {
-        throw new UnsupportedOperationException("Un pez no puede caminar.");
+    public void nadar(){
+        System.out.println("El pez esta nadando");
     }
 
-    @Override
-    public void volar() {
-        throw new UnsupportedOperationException("Un pez no puede volar.");
-    }
+
 }
