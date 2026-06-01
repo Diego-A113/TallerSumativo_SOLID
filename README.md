@@ -44,7 +44,11 @@ src/main/java/clinicaveterinaria/
 
 ## Trabajo del taller
 
-- Integrante 1: refactorizar SRP.
+- Integrante 1: refactorizar SRP. Estudiante: Anai Menendez
+Explicacion:
+Clase Veterinario - tenia cuatro motivos o razones para cambiar y estas eran reservaService, diagnosticoService, facturacionService y reporteService, lo cual no cumplia con con el principio SRP esto debido a que la clase aparte de representar a todo lo que tenia que ver con veterinario hacia otras funcionalidades. Se movio las funcionalidades mencionadas anteriormente en clases relacionadas como por ejemplo el metodo reporteService se movio hacia la clase de ReporteService y eso mismo se hizo con los otros metodos que no correspondian a la clase veterinario con el objetivo de que la clase veterinario tenga una sola razon o motivo de cambio.
+
+
 - Integrante 2: refactorizar OCP.
 - Integrante 3: refactorizar LSP. Nombre: Diego Beltran
   ¿Por qué lanzar `UnsupportedOperationException` puede ser señal de mal diseño?

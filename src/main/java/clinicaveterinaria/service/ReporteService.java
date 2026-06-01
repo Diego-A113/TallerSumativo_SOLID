@@ -49,4 +49,10 @@ public class ReporteService {
         }
         return total;
     }
+
+    public String crearReporte(Cita cita) {
+        return "Reporte: " + nombre + " atendio a " +
+                cita.getMascota().getNombre() + " con diagnostico " + cita.getDiagnostico();
+                
+    }
 }
