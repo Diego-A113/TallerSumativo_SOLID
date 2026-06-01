@@ -46,7 +46,17 @@ src/main/java/clinicaveterinaria/
 
 - Integrante 1: refactorizar SRP.
 - Integrante 2: refactorizar OCP.
-- Integrante 3: refactorizar LSP.
+- Integrante 3: refactorizar LSP. Nombre: Diego Beltran
+  ¿Por qué lanzar `UnsupportedOperationException` puede ser señal de mal diseño?
+  Porque representa un error inesperado ya que por ejemplo si se quiere utilizar el metodo volar en un pez, este codigo fuerza a lanzar una excepcion e indicar que los peces no vuelan, pero esto es una mala practica de programacion.
+
+- ¿Qué contrato estaba prometiendo `Animal`?
+  Estaba prometiendo los contratos de "Nadar", "Volar" y "Caminar" a todas sus clases hijas, lo cual no es del todo eficiente, ya que no todas sus clases hijas utilizaran todos los metodos del contrato de la clase Padre, donde dichos metodos provienen de la interfaz IAnimal
+
+- ¿Cómo cambia el diseño cuando modelamos capacidades en lugar de herencia amplia?
+  El diseño se vuelve mas escalable y evita errores en herencia ya que dividimos la interfaz grande a interfaces pequeñas que contienen la accion asignada
+
+
 - Integrante 4: refactorizar ISP y DIP.
 
 Lee `guia.md` para instrucciones, checklists y preguntas de discusión.
