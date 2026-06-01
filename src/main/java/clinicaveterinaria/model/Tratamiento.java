@@ -8,6 +8,7 @@ public class Tratamiento {
     private TipoTratamiento tipo;
     private String descripcion;
     private double costo;
+    private double cost4o;
 
     public Tratamiento(int id, TipoTratamiento tipo, String descripcion, double costo) {
         this.id = id;
