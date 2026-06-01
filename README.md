@@ -62,5 +62,17 @@ Clase Veterinario - tenia cuatro motivos o razones para cambiar y estas eran res
 
 
 - Integrante 4: refactorizar ISP y DIP.
+## Nombre:Angie Liliana Inga Ontaneda
 
+## Integrante 2: refactorizar OCP.
+    Se necesitaba refactorizar el codigo de Tratamiento.java porque constaba de if y else, y eso hace que 
+    el codigo a largo plazo sea manipulado a la hora querer agregar mas tipos de tratamientos. Para
+    esto se creo clases que implemente  la clase Itratamiento, estas clases son creadas por cada tipo de tratamiento, asi si se desea agreagar más pues solo se cree otra clase con el respectivo tipo de tratamiento asi permitiendo que no se manipule mucho el codigo.
+## Integrante 2: Pregunta de discusion
+    - ¿Por qué los condicionales repetidos hacen más caro el cambio?
+        Porque no es un codigo mantenible, podrian ser 20 if e igualmente no se un codigo mantenible. No es recomendable.
+    - ¿Qué pasaría si agregamos `Odontologia` como tratamiento?
+        Pues se tendria que crear una clase para odontologia que immplemente Itratamiento
+    - ¿Cuándo una interfaz ayuda a extender el sistema?
+        Cuando son muchas clases que van a requerir de los mismo metodos.
 Lee `guia.md` para instrucciones, checklists y preguntas de discusión.
