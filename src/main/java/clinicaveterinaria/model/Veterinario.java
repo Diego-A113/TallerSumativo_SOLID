@@ -16,11 +16,6 @@ public class Veterinario {
         this.disponible = disponible;
     }
 
-    public String crearReporte(Cita cita) {
-        return "Reporte: " + nombre + " atendio a " +
-                cita.getMascota().getNombre() + " con diagnostico " + cita.getDiagnostico();
-    }
-
     public int getId() {
         return id;
     }
