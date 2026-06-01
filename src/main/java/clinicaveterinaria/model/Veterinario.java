@@ -16,13 +16,6 @@ public class Veterinario {
         this.disponible = disponible;
     }
 
-    
-
-    public void diagnosticar(Cita cita, String diagnostico) {
-        cita.setDiagnostico(diagnostico);
-        cita.setEstado(EstadoCita.ATENDIDA);
-    }
-
     public Factura generarFactura(int facturaId, Cita cita, double monto, LocalDate fecha) {
         return new Factura(facturaId, cita, monto, fecha, false);
     }
