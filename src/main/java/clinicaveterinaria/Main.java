@@ -1,11 +1,29 @@
 package clinicaveterinaria;
 
-import clinicaveterinaria.model.*;
-import clinicaveterinaria.repository.*;
-import clinicaveterinaria.service.*;
-
-
 import java.time.LocalDate;
+
+import clinicaveterinaria.model.Animal;
+import clinicaveterinaria.model.Cita;
+import clinicaveterinaria.model.Factura;
+import clinicaveterinaria.model.Mascota;
+import clinicaveterinaria.model.Pez;
+import clinicaveterinaria.model.TipoAnimal;
+import clinicaveterinaria.model.TipoTratamiento;
+import clinicaveterinaria.model.Tratamiento;
+import clinicaveterinaria.model.Veterinario;
+import clinicaveterinaria.repository.BaseDatos;
+import clinicaveterinaria.repository.DirectoBaseDatos;
+import clinicaveterinaria.service.CalculadoraCostoTratamiento;
+import clinicaveterinaria.service.Clinica;
+import clinicaveterinaria.service.DiagnosticoService;
+import clinicaveterinaria.service.DirectoVeterinario;
+import clinicaveterinaria.service.FacturacionService;
+import clinicaveterinaria.service.MascotaService;
+import clinicaveterinaria.service.ReporteService;
+import clinicaveterinaria.service.ReservaService;
+import clinicaveterinaria.service.ServicioClinicaCompleto;
+import clinicaveterinaria.service.TratamientoService;
+import clinicaveterinaria.service.VeterinarioCrudService;
 
 public class Main {
     public static void main(String[] args) {
@@ -42,7 +60,7 @@ public class Main {
         System.out.println("Ingresos del mes: " + reporteService.calcularIngresosMensual());
 
         demostrarViolacionesSinRomperEjecucion(veterinario, mascota, tratamiento);
-        new Clinica().agendarConsultaRapida(mascota, veterinario);
+        new Clinica(new DirectoVeterinario(), new DirectoBaseDatos()).agendarConsultaRapida(mascota, veterinario);
         new ServicioClinicaCompleto(baseDatos).calcularTratamiento(tratamiento);
     }
 
