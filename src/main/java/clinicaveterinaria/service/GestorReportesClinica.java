@@ -1,12 +1,16 @@
 package clinicaveterinaria.service;
 
-import clinicaveterinaria.repository.BaseDatos;
+import clinicaveterinaria.interfaces.IAuditable;
 
 
 public class GestorReportesClinica {
-    private final BaseDatos baseDatos = new BaseDatos();
+    private final IAuditable auditable;
+
+    public GestorReportesClinica(IAuditable auditable) {
+        this.auditable = auditable;
+    }
 
     public void imprimirResumenOperaciones() {
-        System.out.println("Resumen interno: " + baseDatos.getAuditoria());
+        System.out.println("Resumen interno: " + auditable.getAuditoria());
     }
 }

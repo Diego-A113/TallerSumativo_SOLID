@@ -288,8 +288,11 @@ Checklist de validación:
 Preguntas de discusión:
 
 - ¿Qué problema causa una interfaz gigante en equipos grandes?
+Lleva demasiados problemas, ya que hay clases que van a necesitar solo algunos metodos de esa interfaz y no todos, así violando el principio ISP al tener que depender de métodos que no usa.
 - ¿Por qué `new DirectoBaseDatos()` dificulta cambiar o probar la clase?
+Porque en un contexto real dificultaria cambiar o probar el codigo ya que el objetivo de este metodo es agregar una cita rapida para probar el sistema y este mismo no se podria ejecutar sin internet, ademas de que habria que cambiar la clase si se desea cambiar de base de datos, asi que en vez de crear un new DirectoBaseDatos es mejor usar una abstraccion de una interfaz.
 - ¿Qué dependencia debería conocer el código de alto nivel: interfaz o clase concreta?
+La regla del concepto DIP es que el codigo de alto nivel solo debe conocer la abstraccion (las interfaces), jamas los detalles o la clase concreta.
 
 ## Checklist de validación general
 

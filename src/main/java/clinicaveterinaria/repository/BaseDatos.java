@@ -1,5 +1,12 @@
 package clinicaveterinaria.repository;
 
+import java.time.LocalDate;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+
+import clinicaveterinaria.interfaces.IAuditable;
 import clinicaveterinaria.interfaces.IBaseDatos;
 import clinicaveterinaria.model.Cita;
 import clinicaveterinaria.model.Factura;
@@ -7,14 +14,8 @@ import clinicaveterinaria.model.Mascota;
 import clinicaveterinaria.model.Tratamiento;
 import clinicaveterinaria.model.Veterinario;
 
-import java.time.LocalDate;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
 
-
-public class BaseDatos implements IBaseDatos {
+public class BaseDatos implements IBaseDatos, IAuditable {
     private final List<Mascota> mascotas = new ArrayList<>();
     private final List<Veterinario> veterinarios = new ArrayList<>();
     private final List<Cita> citas = new ArrayList<>();
@@ -51,6 +52,7 @@ public class BaseDatos implements IBaseDatos {
         auditoria.put(nombre, auditoria.getOrDefault(nombre, 0) + 1);
     }
 
+    @Override
     public Map<String, Integer> getAuditoria() {
         return auditoria;
     }

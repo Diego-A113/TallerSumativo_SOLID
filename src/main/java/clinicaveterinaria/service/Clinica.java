@@ -1,20 +1,20 @@
 package clinicaveterinaria.service;
 
+import java.time.LocalDate;
+
+import clinicaveterinaria.interfaces.IDirectoBase;
+import clinicaveterinaria.interfaces.IVeterinarioService;
 import clinicaveterinaria.model.Cita;
 import clinicaveterinaria.model.Mascota;
 import clinicaveterinaria.model.Veterinario;
-import clinicaveterinaria.repository.DirectoBaseDatos;
-
-import java.time.LocalDate;
-
 
 public class Clinica {
-    private final DirectoVeterinario veterinarioService;
-    private final DirectoBaseDatos baseDatos;
+    private final IVeterinarioService veterinarioService;
+    private final IDirectoBase baseDatos;
 
-    public Clinica() {
-        this.veterinarioService = new DirectoVeterinario();
-        this.baseDatos = new DirectoBaseDatos();
+    public Clinica(IVeterinarioService veterinarioService, IDirectoBase baseDatos) {
+        this.veterinarioService = veterinarioService;
+        this.baseDatos = baseDatos;
     }
 
     public Cita agendarConsultaRapida(Mascota mascota, Veterinario veterinario) {
